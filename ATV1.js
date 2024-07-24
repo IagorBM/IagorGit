@@ -5,5 +5,6 @@ function fato(){
     var fat1 = document.getElementById("fat1").value;
     
     multip = parseInt(multip);
+    alert(fat1);
     document.getElementById("respos1taFat").innerHTML= fat1;
 }
