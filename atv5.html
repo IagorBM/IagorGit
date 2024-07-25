@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <input type="number" id="dig1"><br>
+        <input type="number" id="dig2"><br>
+        <input type="number" id="dig3"><br>
+        <button onclick="media()">Calcula</button>
+        <script>
+            function media(){
+                var dig1 = document.getElementById("dig1").value;
+                dig1 = parseInt(dig1);
+                var dig2 = document.getElementById("dig2").value;
+                dig2 = parseInt(dig2);
+                var dig3 = document.getElementById("dig3").value;
+                dig3 = parseInt(dig3);
+                //o código sem nenhum dos parseint estava dando um valor um tanto quanto questionavel 
+
+                var med = (dig1+dig2+dig3)/3;
+
+                alert(med.toFixed(2));
+                //.tofixed() limita as casas decimais após a vírgula
+            }
+        </script>
+    </body>
+</html>
