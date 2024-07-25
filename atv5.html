@@ -16,13 +16,15 @@
                 dig2 = parseInt(dig2);
                 var dig3 = document.getElementById("dig3").value;
                 dig3 = parseInt(dig3);
-                //o código sem nenhum dos parseint estava dando um valor um tanto quanto questionavel 
+                //sem os parseInt, o resultado final estava BEM errado, ou estava certo só pro pc
+                
 
                 var med = (dig1+dig2+dig3)/3;
-
-                alert(med.toFixed(2));
-                //.tofixed() limita as casas decimais após a vírgula
+                
+                document.getElementById("resposta").innerHTML=med.toFixed(2);
+                //toFixed(2) limita o número de casas decimais após a vírgula
             }
         </script>
+        <p id="resposta"></p>
     </body>
 </html>
