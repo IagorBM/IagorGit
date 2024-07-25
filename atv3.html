@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <input type="number" id="num1">
+        <input type="number" id="num2">
+        <input type="number" id="num3">
+
+        <button onclick="compar()">comparar</button>
+        <script>
+            function compar(){
+                var num = document.getElementById("num1").value;
+                var nud = document.getElementById("num2").value;
+                var nut = document.getElementById("num3").value;
+
+                var max = Math.max(num,nud,nut);
+                var min = Math.min(num,nud,nut);
+
+                alert(max);
+            }
+        </script>
+    </body>
+</html>
