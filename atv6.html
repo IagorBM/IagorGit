@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+    
+        <input type="number" id="peso" placeholder="peso">
+        <input type="number" id="altura" placeholder="altura">
+        
+        <button onclick="calImc()">Calcular</button>
+        <script>
+            function calImc(){
+                var peso = document.getElementById(peso).value;
+                peso = parseFloat(peso);
+                var altura = document.getElementById(altura).value;
+                altura = parseFloat(altura);
+            }
+        </script>
+    <div></div>
+    </body>
+</html>
