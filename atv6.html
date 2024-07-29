@@ -4,19 +4,23 @@
         <meta charset="UTF-8">
     </head>
     <body>
-    
-        <input type="number" id="peso" placeholder="peso">
-        <input type="number" id="altura" placeholder="altura">
-        
-        <button onclick="calImc()">Calcular</button>
-        <script>
-            function calImc(){
-                var peso = document.getElementById(peso).value;
-                peso = parseFloat(peso);
-                var altura = document.getElementById(altura).value;
-                altura = parseFloat(altura);
-            }
-        </script>
-    <div></div>
+        coloque o seu peso em kilos
+        <input type="number" id="peso" placeholder="peso"><br>
+        coloque a sua altura em metros
+        <input type="number" id="altura" placeholder="altura"><br>
+        <button onclick="imc()">Calcular</button>
+            <script>
+                function imc(){
+                    var peso = document.getElementById("peso").value;
+                    peso = parseFloat(peso);
+                    var altura = document.getElementById("altura").value;
+                    altura = parseFloat(altura);
+
+                    var imc = peso/(altura*altura)
+
+                    document.getElementById("resposta").innerHTML=imc.toFixed(2);
+                }
+            </script>
+        <p id="resposta"></p>
     </body>
 </html>
