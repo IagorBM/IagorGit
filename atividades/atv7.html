@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JavaScript Exercício</title>
     <script>
       var multiplos3 = 0;
       var multiplos5 = 0;
+
       for (i = 0; i < 1000; i++) {
-        multiplos3 += (i % 3 == 0) ? i : 0;//? e o :
-        multiplos5 += (i % 5 == 0) ? i : 0;
+        if (i%3 == 0){
+          multiplos3 += i;
+        }
+        if (i%5 == 0){
+          multiplos5 += i;
+        }
       }
       document.write("Somatórios dos Múltiplos de 3: " + multiplos3 + "<br>");
       document.write("Somatórios dos Múltiplos de 5: " + multiplos5 + "<br>");
@@ -15,6 +19,8 @@
     </script>
   </head>
   <body>
-    <h1>Exercício 07</h1>
   </body>
 </html>
+
+<!--só reescrevi o laço de repetição pois pretendi deixar de uma maneira que eu entendi
+já que não sabia o que o "(i % 3 == 0) ? i : 0;" fazia -->
