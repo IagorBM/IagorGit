@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name=viewport" content="width=device-width, initial-scale=1.0">
+        <title>Produtos</title>
+        <style>
+            input{
+                max-width:70px;
+            }
+
+
+            .item1 { grid-area: soma;}
+            .item2 { grid-area: subtração;}
+            .item3 { grid-area: multiplicação;}
+            .item4 { grid-area: divisão;}
+            .item5 { grid-area: fatorial;}
+            .item6 { grid-area: imc;}
+            .item7 { grid-area: nomeSob;}
+            .item8 { grid-area: login;}
+            .item9 { grid-area: imagem;}
+
+
+
+
+
+            .grid-container {
+            display: grid;
+            grid-template-areas:
+                'soma subtração multiplicação'
+                'divisão fatorial imc'
+                'nomeSob login imagem';
+            gap: 10px;
+            background-color: rgb(255, 255, 255);
+            padding: 10px;
+            }
+
+
+
+
+            .grid-container > div {
+            background-color: rgba(187, 187, 187, 0.8);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+            height: 25vh;
+            /*display: flex;
+            flex-direction: column;
+            justify-content: space-between;*/
+            }
+           
+        </style>
+    </head>
+
+    <!--========================================================================-->
+    
+    <body>
+        <div class="grid-container">
+            <div class="item1">Soma<br>
+                <input type="number" id="soma1" placeholder="valor 1" value="0">
+                <input type="number" id="soma2" placeholder="valor 2" value="0"><br>
+                <button id ="somador">soma</button>
+                <p id="respostaSoma"></p>
+            </div>
+            <div class="item2">subtração<br>
+                <input type="number" id="menos1" placeholder="valor 2" value="0">
+                <input type="number" id="menos2" placeholder="valor 2" value="0"><br>
+                <button id ="subtr">subtração</button>
+                <p id="respostaMenos"></p>
+            </div>
+            <div class="item3">multiplicação<br>
+                <input type="number" id="mult1" placeholder="valor 2" value="0">
+                <input type="number" id="mult2" placeholder="valor 2" value="0"><br>
+                <button id ="mult">multiplicação</button>
+                <p id="respostaMult"></p>
+            </div>
+            <div class="item4">divisão<br>
+                <input type="number" id="div1" placeholder="valor 2" value="0">
+                <input type="number" id="div2" placeholder="valor 2" value="0"><br>
+                <button id ="divi">divisão</button>
+                <p id="respostaDiv"></p>
+            </div>
+            <div class="item5">fatorial<br>
+                <input type="number" id="fat1" placeholder="valor" value="0"><br>
+                <button id ="fato">fatorial</button>
+                <p id="respostaFat"></p>
+            </div>
+            <div class="item6">imc<br>
+                <input type="number" id="peso" placeholder="peso" value="0">
+                <input type="number" step="0.01" id="altura" placeholder="altura" value="0"><br>
+                <button id ="imc">IMC</button>
+                <p id="respostaImc"></p>
+            </div>            
+            <div class="item7">nome e Sobrenome<br>
+                <input type="text" id="nome" placeholder="Nome">
+                <input type="text" id="nomeSob" placeholder="Sobrenome"><br>
+                <button id ="noSobN">Nome e Sobrenome</button>
+                <p id="resposta"></p>
+            </div>
+            <div class="item8">Login<br>
+                <input type="text" id="email" placeholder="Email" required>
+                <input type="password" id="senha" placeholder="Senha" required><br>
+                <button id="login">Login</button>
+                <p id="respostaLog"></p>
+            </div>
+
+
+            <div class="item9">imagem<br>
+                <button onclick ="trocar()">Mostrar Imagem</button>
+                <p id="resposta"></p>
+                <img id="figura" src="Plaguebringer.png" width="100" height="100">
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <script>
+            var imgAtual="Plaguebringer.png"
+            var imgAnterior="The_Plaguebringer_Goliath.png"
+           
+           
+            document.getElementById("somador").addEventListener("click", soma);
+            function soma(){
+                
+                /*console.log("entrou na função");*/
+                var num1 = document.getElementById("soma1").value;
+                num1 = parseInt(num1);
+                var num2 = document.getElementById("soma2").value;
+                num2 = parseInt(num2);
+                if (!isNaN(num1) && !isNaN(num2))
+                {
+                    //console.log(num1+num2);
+                    
+                    document.getElementById("respostaSoma").innerHTML= num1+num2;
+                }
+                else
+                {
+                    document.getElementById("respostaSoma").innerHTML= "insira um valor";
+
+                }
+            }
+
+            /////////////////////////////////////////////////////////////////////////////////////
+
+            document.getElementById("subtr").addEventListener("click", subtr);
+            function subtr(){
+                var num1 = document.getElementById("menos1").value;
+                num1 = parseInt(num1);
+                var num2 = document.getElementById("menos2").value;
+                num2 = parseInt(num2);
+                if (!isNaN(num1) && !isNaN(num2))
+                {
+               document.getElementById("respostaMenos").innerHTML= num1-num2;
+                } 
+                else
+                {
+                    document.getElementById("respostaMenos").innerHTML= "insira um valor";
+
+                }
+            }
+
+            /////////////////////////////////////////////////////////////////////////////////////
+
+            document.getElementById("mult").addEventListener("click", mult);
+            function mult(){
+                var num1 = document.getElementById("mult1").value;
+                num1 = parseInt(num1);
+                var num2 = document.getElementById("mult2").value;
+                num2 = parseInt(num2);
+                if (!isNaN(num1) && !isNaN(num2))
+                {
+                document.getElementById("respostaMult").innerHTML= num1*num2;                  
+                }
+                else
+                {
+                    document.getElementById("respostaMult").innerHTML= "insira um valor";
+
+                }
+            }
+
+            /////////////////////////////////////////////////////////////////////////////////////
+            
+            document.getElementById("divi").addEventListener("click", divi);
+            function divi(){
+                var num1 = document.getElementById("div1").value;
+                num1 = parseInt(num1);
+                var num2 = document.getElementById("div2").value;
+                num2 = parseInt(num2);
+                if (!isNaN(num1) && !isNaN(num2))
+                {
+                document.getElementById("respostaDiv").innerHTML= num1/num2;
+                }
+                else
+                {
+                    document.getElementById("respostaDiv").innerHTML= "insira um valor";
+
+                }
+            }
+            
+            /////////////////////////////////////////////////////////////////////////////////////
+            
+            document.getElementById("fato").addEventListener("click", fato);
+            function fato(){
+                console.log("aasdqweqw");
+                let multip = 1;
+                var fat1 = document.getElementById("fat1").value;
+                for (let i = fat1 ; i > 0 ; i--)
+                multip = multip * i;
+               
+                multip = parseInt(multip);
+                document.getElementById("respostaFat").innerHTML= multip;
+            }
+
+            /////////////////////////////////////////////////////////////////////////////////////
+            
+            document.getElementById("imc").addEventListener("click", imc);
+            function imc(){
+                var num1 = document.getElementById("peso").value;
+                num1 = parseInt(num1);
+                var num2 = document.getElementById("altura").value;
+                num2 = parseFloat(num2);
+                if (!isNaN(num1) && !isNaN(num2))
+                {
+                document.getElementById("respostaImc").innerHTML= (num1/(num2*num2)).toFixed(2);
+                }
+                else
+                {
+                    document.getElementById("respostaImc").innerHTML= "insira um valor";
+
+                }
+            }
+            
+            /////////////////////////////////////////////////////////////////////////////////////
+
+            document.getElementById("noSobN").addEventListener("click", noSobN);
+            function noSobN(){
+                var nome = document.getElementById("nome").value;
+                var sobNome = document.getElementById("nomeSob").value;
+                document.getElementById("resposta").innerHTML= nome+" "+sobNome;
+            }    
+
+            /////////////////////////////////////////////////////////////////////////////////////
+
+            document.getElementById("login").addEventListener("click", login);
+            function login(){
+                var logini = document.getElementById("email").value;
+                var senha = document.getElementById("senha").value;
+                if (logini === "admin" && senha === "admin"){
+                    document.getElementById("respostaLog").innerHTML="acertou";
+                    console.log("asdas");
+                }
+                else
+                document.getElementById("respostaLog").innerHTML="errou";
+            }
+
+            /////////////////////////////////////////////////////////////////////////////////////
+
+            function trocar(){
+                document.getElementById("figura").src= imgAtual;
+                let aux = imgAtual;
+                imgAtual = imgAnterior;
+                imgAnterior = aux;
+            }
+        </script>
+    </body>
+</html>
+
