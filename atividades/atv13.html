@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function math(){
+                let base = document.getElementById("base").value;
+                let expoente = document.getElementById("expo").value;
+                var i = 0;
+                var ponte = 0;
+
+                ponte = base ** expoente;
+
+                document.getElementById("respostaB").innerHTML="Base: "+base;
+                document.getElementById("respostaE").innerHTML="Expoente: "+expoente;
+                document.getElementById("resposta").innerHTML="Potência: "+ponte;
+            }
+        </script>
+    </head>
+    <body>
+        <input type="number" placeholder="base" id="base" value="0">
+        <input type="button" value="calcular" onclick="math()"><br>
+        <input type="number" placeholder="expoente" id="expo" value="0">
+        <p id="respostaB"></p>
+        <p id="respostaE"></p>
+        <p id="resposta"></p>
+
+    </body>
+</html>
