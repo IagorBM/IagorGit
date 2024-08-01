@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function inverta(){
+                let palavraNormal = document.getElementById("txt").value;
+                let palavraInvertida = palavraNormal.split("").reverse().join("")
+
+                document.getElementById("resposta").innerHTML=palavraInvertida;
+                
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="txt">
+        <input type="button" onclick="inverta()" value="inverter">
+        <p id="resposta"></p>
+    </body>
+</html>
