@@ -35,7 +35,9 @@
             padding: 10px;
             }
 
-
+            .oculDiv{
+            display: none;
+        }
 
 
             .grid-container > div {
@@ -105,7 +107,7 @@
             </div>
 
 
-            <div class="item9">imagem<br>
+            <div class="item9" id="carouselExampleSlidesOnly">imagem<br>
                 <button onclick ="trocar()">Mostrar Imagem</button>
                 <p id="resposta"></p>
                 <img id="figura" src="Plaguebringer.png" width="100" height="100">
@@ -260,11 +262,21 @@
 
             /////////////////////////////////////////////////////////////////////////////////////
 
-            function trocar(){
+            /*function trocar(){
                 document.getElementById("figura").src= imgAtual;
                 let aux = imgAtual;
                 imgAtual = imgAnterior;
                 imgAnterior = aux;
+            */
+                function trocar() {
+                var div = document.getElementById("figura");
+                if (div.style.display == "block")
+                {
+                div.style.display = "none";
+                }
+                else{
+                div.style.display = "block";
+                }
             }
         </script>
     </body>
