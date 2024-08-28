@@ -1,349 +1,443 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+       <style>
+           @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
 
 
-            * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-            }
 
 
 
 
-            body {
-            display: flex;
-            min-height: 100vh;
-            background-color: #e3e9f7;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            }
+           * {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+           font-family: 'Poppins', sans-serif;
+           }
 
 
 
 
-            main {
-            padding: 20px;
-            position: fixed;
-            z-index: 1;
-            padding-left: calc(82px + 20px);
-            }
+           h1{
+               font-size: clamp(1em, 1em + 1vw, 1.5em);
+               font-size: 70px;
+               text-decoration: underline;
+               text-align: center;
+           }
 
 
+           body {
+           display: flex;
+           min-height: 100vh;
+           background-color: #e3e9f7;
+           font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+           }
 
 
-            #sidebar {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            background-color: #ffffff;
-            height: 100vh;
-            border-radius: 0px 18px 18px 0px;
-            position: relative;
-            transition: all .5s;
-            min-width: 82px;
-            z-index: 2;
-            }
 
 
 
 
-            #sidebar_content {
-            padding: 12px;
-            }
 
 
+           main {
+           padding: 20px;
+           position: fixed;
+           z-index: 1;
+           padding-left: calc(82px + 20px);
+           }
 
 
 
-            #side_items {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            list-style: none;
-            }
 
 
 
 
-            .side-item {
-            border-radius: 8px;
-            padding: 14px;
-            cursor: pointer;
-            }
 
+           #sidebar {
+           display: flex;
+           flex-direction: column;
+           justify-content: space-between;
+           background-color: #ffffff;
+           height: 100vh;
+           border-radius: 0px 18px 18px 0px;
+           position: relative;
+           transition: all .5s;
+           min-width: 82px;
+           z-index: 2;
+           }
 
 
 
-            .side-item.active {
-            background-color: #4f46e5;
-            }
 
 
 
 
-            .side-item:hover:not(.active),
-            #logout_btn:hover {
-            background-color: #e3e9f7;
-            }
 
+           #sidebar_content {
+           padding: 12px;
+           }
 
 
 
-            .side-item a {
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #0a0a0a;
-            }
 
 
 
 
-            .side-item.active a {
-            color: #e3e9f7;
-            }
 
 
 
+           #side_items {
+           display: flex;
+           flex-direction: column;
+           gap: 8px;
+           list-style: none;
+           }
 
-            .side-item a i {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 20px;
-            height: 20px;
-            }
 
 
-            #open_btn {
-            position: absolute;
-            top: 30px;
-            right: -10px;
-            background-color: #4f46e5;
-            color: #e3e9f7;
-            border-radius: 100%;
-            width: 20px;
-            height: 20px;
-            border: none;
-            cursor: pointer;
-            }
 
 
 
 
-            #open_btn_icon {
-            transition: transform .3s ease;
-            }
 
+           .side-item {
+           border-radius: 8px;
+           padding: 14px;
+           cursor: pointer;
+           }
 
 
 
-            .open-sidebar #open_btn_icon {
-            transform: rotate(180deg);
-            }
 
 
 
 
-            .item-description {
-            width: 0px;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            font-size: 14px;
-            transition: width .6s;
-            height: 0px;
-            }
 
+           .side-item.active {
+           background-color: #4f46e5;
+           }
 
 
 
-            #sidebar.open-sidebar {
-            min-width: 15%;
-            }
 
 
-
-
-            #sidebar.open-sidebar .item-description {
-            width: 150px;
-            height: auto;
-            }
-
-
-
-
-            #sidebar.open-sidebar .side-item a {
-            justify-content: flex-start;
-            gap: 14px;
-            }
-
-
-            /*================================*/
-
-
-            /*
-            .block:before {
-            content: '';
-            display: inline-block;
-            height: 100%; 
-            vertical-align: middle;
-            margin-right: -0.25em;
-            }
-            .centered {
-            display: inline-block;
-            vertical-align: middle;
-            width: 80%;
-            background: #222;
-            color: #FFF;
-            }
-            
-
-            */
-            .block{
-                background-color: #0a0a0a;
-                text-align: center;
-                width: 70%;
-                height: 150px;
-                margin: 0 auto;             
-                
-            }
-
-            .square{
-                width:100%;
-                height:100%; 
-                background-color: #e3e9f7;
-            }
-
-            #ad1{
-                background-color: #79f6ffb4;
-            }
-
-            #ad2{
-                background-color: #b908084d;
-                
-                
-            }
-
-            /*=============
-            
-            ===================*/
-            
-        </style>
-        <title>Sidebar</title>
-    </head>
-    <body>
-            <nav id="sidebar">
-                <div id="sidebar_content">
-            
-                    <ul id="side_items">
-                        <li class="side-item ">
-                            <a href="app.html">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                                <span class="item-description">
-                                    Tela Inicial
-                                </span>
-                            </a>
-                        </li>
-            
-                        <li class="side-item active">
-                            <a href="jogos.html">
-                                <i class="fa-solid fa-puzzle-piece"></i>
-                                <span class="item-description">
-                                    Jogos
-                                </span>
-                            </a>
-                        </li>
-            
-                        <li class="side-item">
-                            <a href="#">
-                                <i class="fa-solid fa-heart-pulse"></i>
-                                <span class="item-description">
-                                    Saúde
-                                </span>
-                            </a>
-                        </li>
-            
-                        <li class="side-item">
-                            <a href="#">
-                                <i class="fa-solid fa-box"></i>
-                                <span class="item-description">
-                                    Produtos
-                                </span>
-                            </a>
-                        </li>
-            
-                        <li class="side-item">
-                            <a href="#">
-                                <i class="fa-solid fa-image"></i>
-                                <span class="item-description">
-                                    Imagens
-                                </span>
-                            </a>
-                        </li>
-            
-                        <li class="side-item">
-                            <a href="#">
-                                <i class="fa-solid fa-gear"></i>
-                                <span class="item-description">
-                                    Configurações
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-            
-                    <button id="open_btn">
-                        <i id="open_btn_icon" class="fa-sharp fa-solid fa-list-ul"></i>
-                    </button>
-                </div>      
-            </nav>
-        </div>
-        
-            <div class="square">
-                <br />
-                <div class="block">
-                    pão de forma
-                </div>
-                <br />
-            
-    
-                <div class="block">
-                    fghj
-                </div>
-                <br />
-                <div class="block">
-                    fghj
-                </div>
-                <br />
-                <div class="block">
-                    fghj
-                </div>
-                <br />
-                <div class="block">
-                    fghj
-                </div>
-                <br />
-                <div class="block">
-                    fghj
-                </div>
-                <br />
-                <div style="clear: both;">&nbsp;</div>
-            </div>
-    
-    <script>
-        document.getElementById('open_btn').addEventListener('click', function () {
-            document.getElementById('sidebar').classList.toggle('open-sidebar');
-        });
-    </script>
-    </body>
+
+
+
+           .side-item:hover:not(.active),
+           #logout_btn:hover {
+           background-color: #e3e9f7;
+           }
+
+
+
+
+
+
+
+
+           .side-item a {
+           text-decoration: none;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           color: #0a0a0a;
+           }
+
+
+
+
+
+
+
+
+           .side-item.active a {
+           color: #e3e9f7;
+           }
+
+
+
+
+
+
+
+
+           .side-item a i {
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           width: 20px;
+           height: 20px;
+           }
+
+
+
+
+           #open_btn {
+           position: absolute;
+           top: 30px;
+           right: -10px;
+           background-color: #4f46e5;
+           color: #e3e9f7;
+           border-radius: 100%;
+           width: 20px;
+           height: 20px;
+           border: none;
+           cursor: pointer;
+           }
+
+
+
+
+
+
+
+
+           #open_btn_icon {
+           transition: transform .3s ease;
+           }
+
+
+
+
+
+
+
+
+           .open-sidebar #open_btn_icon {
+           transform: rotate(180deg);
+           }
+
+
+
+
+
+
+
+
+           .item-description {
+           width: 0px;
+           overflow: hidden;
+           white-space: nowrap;
+           text-overflow: ellipsis;
+           font-size: 14px;
+           transition: width .6s;
+           height: 0px;
+           }
+
+
+
+
+
+
+
+
+           #sidebar.open-sidebar {
+           min-width: 15%;
+           }
+
+
+
+
+
+
+
+
+           #sidebar.open-sidebar .item-description {
+           width: 150px;
+           height: auto;
+           }
+
+
+
+
+
+
+
+
+           #sidebar.open-sidebar .side-item a {
+           justify-content: flex-start;
+           gap: 14px;
+           }
+
+
+
+
+           /*================================*/
+
+
+
+
+           /*
+           .block:before {
+           content: '';
+           display: inline-block;
+           height: 100%;
+           vertical-align: middle;
+           margin-right: -0.25em;
+           }
+           .centered {
+           display: inline-block;
+           vertical-align: middle;
+           width: 80%;
+           background: #222;
+           color: #FFF;
+           }
+          
+
+
+           */
+           .block{
+               background-color: #0a0a0a;
+               text-align: center;
+               width: 70%;
+               height: 150px;
+               margin: 0 auto;            
+              
+           }
+
+
+           .square{
+               width:100%;
+               height:100%;
+               background-color: #e3e9f7;
+           }
+
+
+           #ad1{
+               background-color: #79f6ffb4;
+           }
+
+
+           #ad2{
+               background-color: #b908084d;
+              
+              
+           }
+
+
+           /*=============
+          
+           ===================*/
+          
+       </style>
+       <title>Sidebar</title>
+   </head>
+   <body>
+           <nav id="sidebar">
+               <div id="sidebar_content">
+          
+                   <ul id="side_items">
+                       <li class="side-item ">
+                           <a href="app.html">
+                               <i class="fa-solid fa-magnifying-glass"></i>
+                               <span class="item-description">
+                                   Tela Inicial
+                               </span>
+                           </a>
+                       </li>
+          
+                       <li class="side-item active">
+                           <a href="jogos.html">
+                               <i class="fa-solid fa-puzzle-piece"></i>
+                               <span class="item-description">
+                                   Jogos
+                               </span>
+                           </a>
+                       </li>
+          
+                       <li class="side-item">
+                           <a href="#">
+                               <i class="fa-solid fa-heart-pulse"></i>
+                               <span class="item-description">
+                                   Saúde
+                               </span>
+                           </a>
+                       </li>
+          
+                       <li class="side-item">
+                           <a href="#">
+                               <i class="fa-solid fa-box"></i>
+                               <span class="item-description">
+                                   Produtos
+                               </span>
+                           </a>
+                       </li>
+          
+                       <li class="side-item">
+                           <a href="#">
+                               <i class="fa-solid fa-image"></i>
+                               <span class="item-description">
+                                   Imagens
+                               </span>
+                           </a>
+                       </li>
+          
+                       <li class="side-item">
+                           <a href="#">
+                               <i class="fa-solid fa-gear"></i>
+                               <span class="item-description">
+                                   Configurações
+                               </span>
+                           </a>
+                       </li>
+                   </ul>
+          
+                   <button id="open_btn">
+                       <i id="open_btn_icon" class="fa-sharp fa-solid fa-list-ul"></i>
+                   </button>
+               </div>     
+           </nav>
+       </div>
+      
+           <div class="square">
+               <h1>Laser</h1>
+               <br />
+               <br />
+               <br />
+               <div class="block">
+                   pão de forma
+               </div>
+               <br />
+          
+  
+               <div class="block">
+                   fghj
+               </div>
+               <br />
+               <div class="block">
+                   fghj
+               </div>
+               <br />
+               <div class="block">
+                   fghj
+               </div>
+               <br />
+               <div class="block">
+                   fghj
+               </div>
+               <br />
+               <div class="block">
+                   fghj
+               </div>
+               <br />
+               <div style="clear: both;">&nbsp;</div>
+           </div>
+  
+   <script>
+       document.getElementById('open_btn').addEventListener('click', function () {
+           document.getElementById('sidebar').classList.toggle('open-sidebar');
+       });
+   </script>
+   </body>
 </html>
+
+
+
