@@ -15,7 +15,7 @@
             #menu,#rodape{
                 width: 800px;
                 height: 30px;
-                background-color: #0f6;
+                background-color: rgb(61, 67, 100);
             }
 
             #esqurdo{
@@ -24,76 +24,107 @@
                 background-color: #f00;
             }
 
+            .grupos{
+                width: 150px;
+                height: 250px;
+                background-color: fuchsia;
+                float: right;
+            }
+
+
+
+
             #meio{
                 width: 600px;
                 height: 500px;
-                background-color: #0ff;
+                background-color: rgb(235, 235, 235);
                 position: absolute;
                 top: 30px;
                 left: 200px;
             }
             
-            
-
-            .block{
-                width: 80px;
-                height: 80px;
-            }
-
-            /*#vidio{
+            .video{
+                height: auto;
+                width: 150px;
+                position: relative;
+                margin-top: 5px;
+                float: right;
+                margin-right: 15px;
+        
+                /*
                 width: 150px;
                 height: 150px;
                 left: 400px;
                 top: 140px;
                 position: relative;
-                background-color: blueviolet;
-            }*/
-            #roxo{
-                background-color: purple;
-                left: 20px;
-                top: -100px;
-                position: relative;
+                background-color: blueviolet;*/
             }
-            #organizar{
-                position: relative;
-                left: 110px;
-                top: -180px;
-            }
-           
+
             .abilities{
                 height: auto;
-                width: 600px;
+                width: 400px;
                 background-color: #0f6;
-                position: fixed;
+                position: relative;
+                margin-top: 5px;
             }
+        
+            
 
         </style>
     </head>
     <body>
         <div id="inventarioGeral">
             <div id="menu">menu</div>
-            <div id="esqurdo">Lado Esquerdo</div>
+            <div id="esqurdo">
+                <div class="grupos">
+                    <div id="historia">
+                        <a href="https://universe.leagueoflegends.com/pt_BR/story/champion/aurelionsol/">História</a>
+                    </div>
+                    <br>
+                    <div id="graf">
+                        <a href="https://www.leagueofgraphs.com/pt/champions/builds/aurelionsol">Gráficos do Campeão</a>
+                    </div>
+                </div>
+            </div>
             <div id="meio">
 
-                <div id="vidio">exemplo</div>
-                
+                <div class="video">
+                    <video width="150px" height="150px" controls >
+                    <source src="ability_0136_P1.mp4" type="video/mp4">
+                  </video>
+                </div>
                 
                 <div class="abilities">
-                    <div class="block" id="roxo" style="float: left;"><img src="Downloads/AurelionSolP.png"></div>
-                    <div style="overflow: scroll; height: 50px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus provident sunt ullam odit, repellendus, quam rem, facere dolorem ab at debitis? Cumque id magni, architecto quas non perspiciatis laudantium iste.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores explicabo libero, iste totam est nulla quidem molestias ullam quo! Soluta maiores esse sequi ad? Voluptatem optio unde dolores repudiandae maxime.
+                    <div style="float: left;"><img src="AurelionSolP.png"></div>
+                    <div style="overflow: scroll; height: 75px;">As Habilidades de dano de Aurelion Sol reduzem inimigos a acúmulos de Poeira Estelar, melhorando permanentemente cada uma das Habilidades dele. 
                     </div>
-                    <!--
-                    <textarea id="organizar"></textarea>-->
-                    </div>
-                    <br />
-                    <div class="block" id="roxo"></div>
-                    <div style="clear: both;">&nbsp;</div>
                 </div>
 
 
+                <div class="abilities">
+                    <div  id="azul" style="float: left;"><img src="AurelionSolQ.png"></div>
+                    <div style="overflow: scroll; height: 75px;">Aurelion Sol canaliza seu hálito de dragão por alguns segundos, causando dano ao primeiro inimigo atingido e espalhando dano reduzido a inimigos próximos. O hálito causará dano adicional para cada segundo que for canalizado diretamente em um inimigo, ficando mais forte à medida que coleta mais Poeira Estelar. Essa habilidade coleta Poeira Estelar se o alvo for um Campeão.
+                    </div>
+                </div>
+
+                <div class="abilities">
+                    <div  id="azul" style="float: left;"><img src="AurelionSolW.png"></div>
+                    <div style="overflow: scroll; height: 75px;">Aurelion Sol canaliza seu hálito de dragão por alguns segundos, causando dano ao primeiro inimigo atingido e espalhando dano reduzido a inimigos próximos. O hálito causará dano adicional para cada segundo que for canalizado diretamente em um inimigo, ficando mais forte à medida que coleta mais Poeira Estelar. Essa habilidade coleta Poeira Estelar se o alvo for um Campeão.
+                    </div>
+                </div>
+
+                <div class="abilities">
+                    <div  id="azul" style="float: left;"><img src="AurelionSolE.png"></div>
+                    <div style="overflow: scroll; height: 75px;">Aurelion Sol canaliza seu hálito de dragão por alguns segundos, causando dano ao primeiro inimigo atingido e espalhando dano reduzido a inimigos próximos. O hálito causará dano adicional para cada segundo que for canalizado diretamente em um inimigo, ficando mais forte à medida que coleta mais Poeira Estelar. Essa habilidade coleta Poeira Estelar se o alvo for um Campeão.
+                    </div>
+                </div>
+
+                <div class="abilities">
+                    <div  id="azul" style="float: left;"><img src="AurelionSolR.png"></div>
+                    <div style="overflow: scroll; height: 75px;">Aurelion Sol canaliza seu hálito de dragão por alguns segundos, causando dano ao primeiro inimigo atingido e espalhando dano reduzido a inimigos próximos. O hálito causará dano adicional para cada segundo que for canalizado diretamente em um inimigo, ficando mais forte à medida que coleta mais Poeira Estelar. Essa habilidade coleta Poeira Estelar se o alvo for um Campeão.
+                    </div>
+                </div>
             </div>
             <div id="rodape">rodape</div>
-        </div>
     </body>
 </html>
