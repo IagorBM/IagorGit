@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar (Android only) -->
+    <meta name="theme-color" content="#2196f3">
+    <!-- Your app title -->
+    <title>My App</title>
+    <!-- Path to Framework7 Library Bundle CSS -->
+    <link rel="stylesheet" href="lib/framework7-bundle.min.css">
+    <!-- CSS PERSONALIZADO PARA MENU-->
+    <link rel="stylesheet" href="css/personalizado.css">
+    <!--Ícones Material Design-->
+    <link rel="stylesheet" href="css/materialdesignicons.min.css">
+
+
+</head>
+
+<body>
+    <!-- App root element -->
+    <div id="app">
+
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Initial Page, "data-name" contains page name -->
+            <div data-name="link2" class="page">
+                
+                <!-- Top Navbar -->
+                <!----><div class="navbar">
+                    <div class="navbar-bg"></div>
+                    <div class="navbar-inner justify-content-center">
+                        <div class="title ">Link 2</div>
+                    </div>
+                </div>
+                <nav id="sidebar">
+                    <div id="sidebar_content">
+               
+                        <ul id="side_items">
+                            <li class="side-item ">
+                                <a href="app.html">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <span class="item-description">
+                                        Tela Inicial
+                                    </span>
+                                </a>
+                            </li>
+               
+                            <li class="side-item active">
+                                <a href="jogos.html">
+                                    <i class="fa-solid fa-puzzle-piece"></i>
+                                    <span class="item-description">
+                                        Jogos
+                                    </span>
+                                </a>
+                            </li>
+               
+                            <li class="side-item">
+                                <a href="#">
+                                    <i class="fa-solid fa-heart-pulse"></i>
+                                    <span class="item-description">
+                                        Saúde
+                                    </span>
+                                </a>
+                            </li>
+               
+                            <li class="side-item">
+                                <a href="#">
+                                    <i class="fa-solid fa-box"></i>
+                                    <span class="item-description">
+                                        Produtos
+                                    </span>
+                                </a>
+                            </li>
+               
+                            <li class="side-item">
+                                <a href="#">
+                                    <i class="fa-solid fa-image"></i>
+                                    <span class="item-description">
+                                        Imagens
+                                    </span>
+                                </a>
+                            </li>
+               
+                            <li class="side-item">
+                                <a href="#">
+                                    <i class="fa-solid fa-gear"></i>
+                                    <span class="item-description">
+                                        Configurações
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+               
+                        <button id="open_btn">
+                            <i id="open_btn_icon" class="fa-sharp fa-solid fa-list-ul"></i>
+                        </button>
+                    </div>     
+                </nav>
+            </div>
+                <!-- Scrollable page content -->
+                <div class="page-content">
+                    <div class="block">
+                        <div class="square">
+                            <h1>Laser</h1>
+                            <br />
+                            <br />
+                            <br />
+                            <div class="bloco">
+                                pão de forma
+                            </div>
+                            <br />
+                       
+               
+                            <div class="bloco">
+                                fghj
+                            </div>
+                            <br />
+                            <div class="bloco">
+                                fghj
+                            </div>
+                            <br />
+                            <div class="bloco">
+                                fghj
+                            </div>
+                            <br />
+                            <div class="bloco">
+                                fghj
+                            </div>
+                            <br />
+                            <div class="bloco">
+                                fghj
+                            </div>
+                            <br />
+                            <div style="clear: both;">&nbsp;</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Path to Framework7 Library Bundle JS-->
+    <script type="text/javascript" src="lib/framework7-bundle.min.js"></script>
+	<!-- jQuery -->
+	<script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>	
+    <!-- Roteamento do app-->
+    <script type="text/javascript" src="js/routes.js"></script>
+    <script src="cordova.js"></script>
+
+
+    <script>
+        document.getElementById('open_btn').addEventListener('click', function () {
+            document.getElementById('sidebar').classList.toggle('open-sidebar');
+        });
+    </script>
+
+    
+</body>
+
+</html>
