@@ -1,0 +1,37 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    /*background-color: #F0F8FF;
+    position: relative;    border-style: none;*/
+    background: linear-gradient(180deg, rgb(99, 162, 243), aliceblue);
+    height: 100%;
+    
+}
+
+.content{
+    background-color: aliceblue;    
+    width: 250px;
+    height: 300px;
+    border-style: solid;
+    border-radius:10px;
+    border-color: rgb(212, 233, 252);
+
+    position: relative;
+    left:43%;
+    top:200px;
+    text-align:center;
+    
+}
+input{
+    width: 200px;
+    height: 25px;
+}
+.butao{
+    width: 100px;
+    height: 30px;
+}

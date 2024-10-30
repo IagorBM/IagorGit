@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background: linear-gradient(180deg, rgb(99, 162, 243), aliceblue);
+    height: 100%;
+    background-attachment: fixed;
+}
+
+
+.ageFundo {
+    width: 50%;
+    /*largura*/
+    height: auto;
+    top: 20px;
+    background-color: aliceblue;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgb(212, 233, 252);
+
+    position: relative;
+    margin: 0 auto;
+    margin-top: auto;
+
+
+}
+
+
+.agenda {
+    width: 622px;
+    height: 200px;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 10px;
+
+}
+
+
+.tabelaCont {
+    /*position: relative;*/
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+/*===================================*/
+.sair {
+    width: 40px;
+    height: 40px;
+
+    position: relative;
+    margin-left: auto;
+    margin-top: -9;
+
+
+    background-image: url(/Agenda/agenda/imagens/logout.png);
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
+
+.sair:hover {
+    width: 40px;
+    height: 40px;
+    background-image: url(/Agenda/agenda/imagens/logout\(1\).png);
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/*===================================*/
+
+
+.editar {
+    width: 29px;
+    height: 30px;
+    display: block;
+
+
+    text-decoration: none;
+    background-image: url(/Agenda/agenda/imagens/edit.png);
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.editar:hover {
+    width: 30px;
+    height: 30px;
+
+
+    background-image: url(/Agenda/agenda/imagens/edit\(1\).png);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*===================================*/
+
+.excluir {
+    width: 29px;
+    height: 30px;
+    display: block;
+
+
+    text-decoration: none;
+    background-image: url(/Agenda/agenda/imagens/trash.png);
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.excluir:hover {
+    width: 30px;
+    height: 30px;
+
+
+    background-image: url(/Agenda/agenda/imagens/trash\(1\).png);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
